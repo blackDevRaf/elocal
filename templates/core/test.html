@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%load static%}
+
+
+{%block content%}
+<p>hello world from dz</p>
+
+<form action="/" class="productForm" method="post">
+    {%csrf_token%}
+    
+    
+    <input type="tel"placeholder="رقم الهاتف" name="phone">
+    <input type="text"placeholder="الولاية" name="city">
+    <input type="text"placeholder="عنوان الشحن" name="adrees">
+    <button type="submit" class="buynow">اشتري الان</button>
+</form>
+{%endblock%}

@@ -1,0 +1,42 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block content%}
+<div class="container-product">
+        
+    <div class="imagesdiv">
+       <img src="{{product.image.url}}" alt="">
+       <div>
+           {% for pic in pics%}
+           <img src="{{pic.pics.url}}" alt="">
+           {%endfor%}
+       </div>
+
+
+    </div>
+    <div class="formdiv">
+        <h2 class="title">{{product.name}}</h2>
+        <h5 class="price">{{product.price}} DA</h5>
+        <span class="seperator"></span>
+        <div class="text-red-600 text-center text-3xl font-bold uppercase">buy now</div>
+        <p class="description"> {{product.desription}}</p>
+        <div class="payment">
+        
+        <form action="" class="productForm" method="post">
+    `       {%csrf_token%}
+    
+    
+        <input type="tel"placeholder="رقم الهاتف" name="phone" required="تااشاليالص">
+        <input type="text"placeholder="الولاية" name="city">
+        <input type="text"placeholder="عنوان الشحن" name="adrees">
+        <button type="submit" class="buynow">اشتري الان</button>
+        <span class="c"></span>
+        </form>
+        
+        </div>
+
+        
+
+    </div>
+</div>
+{%endblock%}

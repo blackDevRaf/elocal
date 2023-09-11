@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%load static%}
+
+{%block content%}
+<div class="cards">
+    {%for pro in products%}
+    <div class="cards-content">
+        <img src="{{pro.image.url}}" alt="">
+        <h3><a href="{%url 'product_detail' pro.pk%}">{{pro.name}}</a></h3>
+        <p>{{pro.desription}}</p>
+        <h6>{{pro.price}}DA</h6>
+        <button class="cards-buy">اشتري الان</button>
+    </div>
+    {%endfor%}
+
+</div>
+{%endblock%}
